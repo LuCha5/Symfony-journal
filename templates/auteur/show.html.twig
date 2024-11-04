@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de l'Auteur{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1 class="mb-4">Détails de l'Auteur</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ auteur.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ auteur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ auteur.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_auteur_edit', {'id': auteur.id}) }}" class="btn btn-warning">Modifier</a>
+    <a href="{{ path('app_auteur_index') }}" class="btn btn-secondary">Retour à la liste</a>
+    <form method="post" action="{{ path('app_auteur_delete', {'id': auteur.id}) }}" style="display:inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet auteur ?');">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ auteur.id) }}">
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+    </form>
+</div>
+{% endblock %}

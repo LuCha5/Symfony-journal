@@ -1,0 +1,49 @@
+# Ignorer le dossier vendor (dépendances PHP installées par Composer)
+vendor/
+
+# Ignorer les fichiers de configuration sensibles
+.env
+.env.local
+.env.*.local
+.phpunit.result.cache
+
+# Ignorer les caches de Symfony
+var/cache/
+var/log/
+var/sessions/
+
+# Ignorer les fichiers de configuration des IDE et éditeurs
+.idea/
+.vscode/
+*.swp
+
+# Ignorer les fichiers de débogage et de profilage
+var/profiler/
+
+# Ignorer les fichiers de Composer
+composer.lock
+# Si ton projet génère un fichier composer.phar
+composer.phar
+
+# Ignorer les fichiers de l’outil de gestion de dépendances Node.js (si tu utilises Webpack Encore ou d'autres outils front-end)
+node_modules/
+yarn.lock
+package-lock.json
+
+# Ignorer les fichiers générés par Symfony Flex
+.symfony/
+
+# Ignorer les fichiers de cache et les dossiers dist (si tu utilises Webpack Encore)
+public/build/
+public/bundles/
+
+# Ignorer les tests et rapports de couverture de code
+var/test/
+coverage/
+phpunit.xml
+phpunit.xml.dist
+
+# Ignorer les fichiers de configuration et les logs liés au déploiement ou à la CI/CD
+.deployer/
+.env.backup
+deploy.php
